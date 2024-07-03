@@ -15,6 +15,6 @@ output "pet-name" {
 }
 
 resource "local_file" "pets" {
-  filename = var.filenames[count.index]
-  content  = length(var.filenames)
+  filename = var.myfile[count.index]
+  count = length(var.myfile)
 }

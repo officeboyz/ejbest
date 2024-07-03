@@ -18,7 +18,7 @@ variable "length" {
   default = "1"
 }
 
-variable "filenames" {
+variable "myfile" {
   default = [
     "/Users/ej/terraform-local-file/pets.txt",
     "/Users/ej/terraform-local-file/dogs.txt",
