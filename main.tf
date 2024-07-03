@@ -10,21 +10,11 @@ resource "random_pet" "my-pet" {
 }
 
 output "pet-name" {
-  value       = random_pet.my-pet.id
   description = "record the value of the pet ID generated"
 }
 
-# resource "local_file" "pets" {
-#   filename = var.myfile[count.index]
-#   count = length(var.myfile)
-# }
 resource "local_file" "pets" {
-  count    = var.file_count
-  filename = var.myfiles[count.index]
+  count    = length(var.myfiles)
+  myfiles  = var.myfiles[count.index]
   content  = "Content for the file"
 }
-
- variable "filename" {
-  type = list(string)
-  description = "List of filenames to create"
-} 

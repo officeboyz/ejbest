@@ -18,8 +18,10 @@ variable "length" {
   default = "1"
 }
 
-variable "myfiles" {
-  default = [
+ variable "myfiles" {
+  type        = list(string)
+  description = "List of filenames to create"
+  default     = [
     "/Users/ej/terraform-local-file/pets.txt",
     "/Users/ej/terraform-local-file/dogs.txt",
     "/Users/ej/terraform-local-file/cats.txt",
